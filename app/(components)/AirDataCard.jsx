@@ -2,7 +2,13 @@ import React from "react";
 
 const AirDataCard = ({ apiData }) => {
   if (!apiData) {
-    return <div>Search Your Zip Code</div>;
+    return (
+      <div className=" flex flex-col rounded-md shadow-lg p-3 m-2">
+        <div className=" flex justify-center">
+          <h2>Get air quality data where you live.</h2>
+        </div>
+      </div>
+    );
   }
 
   return (
