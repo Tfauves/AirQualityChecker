@@ -11,13 +11,20 @@ const AirDataCard = ({ apiData }) => {
     );
   }
 
+  const cardClass = apiData.Category.Number === 1 ? "good-category" : "";
+
   return (
-    <div className="flex flex-col bg-card hover:bg-card-hover rounded-md shadow-lg p-3 m-2">
+    <div
+      className={`flex flex-col bg-${cardClass} hover:bg-card-hover rounded-md shadow-lg p-3 m-2 `}
+    >
       <div className="flex mb-3">
         <h1>Your Reporting Area</h1>
       </div>
       <div>
         {apiData.ReportingArea} {apiData.StateCode}
+        <div>
+          <h3>{apiData.Category.Name}</h3>
+        </div>
       </div>
       {/* {apiData.map((item, index) => (
         <div key={index}>

@@ -20,6 +20,7 @@ module.exports = {
         "default-text": "#f1f3f5",
         "blue-accent": "#0084d4",
         "blue-accent-hover": "#0099fff",
+        "good-category": "#38761d",
       },
     },
   },
