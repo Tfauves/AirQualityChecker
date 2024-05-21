@@ -2,7 +2,14 @@ import AirDataForm from "./(components)/AirDataForm";
 
 export default function Home() {
   return (
-    <div className="p-5">
+    <div
+      className="h-screen p-5 bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/bgimg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div>
         <AirDataForm />
       </div>

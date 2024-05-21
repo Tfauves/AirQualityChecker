@@ -25,7 +25,7 @@ const AirDataForm = () => {
   const fetchData = async (zip) => {
     const currentDate = new Date().toISOString().slice(0, 10);
     const response = await fetch(
-      `https://www.airnowapi.org/aq/forecast/zipCode/?format=application/json&zipCode=${zip}&date=${currentDate}&distance=25&API_KEY=${apiKEY}`
+      `https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=${zip}&date=${currentDate}&distance=25&API_KEY=${apiKEY}`
     );
     const result = await response.json();
     setData(result[0]);
