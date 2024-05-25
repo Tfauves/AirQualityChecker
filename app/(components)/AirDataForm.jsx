@@ -57,7 +57,7 @@ const AirDataForm = () => {
           </button>
         </form>
       </div>
-      <div>
+      <div className="flex justify-center">
         <AirDataCard apiData={data} />
       </div>
     </div>

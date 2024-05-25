@@ -52,3 +52,17 @@
         transition-colors block;
   }
 }
+
+@layer components {
+  .card {
+    @apply flex items-center justify-center;
+    width: auto;
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 0.7px solid rgb(161, 223, 241);
+    box-shadow:
+      0 4px 10px -1px rgba(0, 0, 0, 0.1),
+      0 2px 6px -2px rgba(0, 0, 0, 0.2);
+  }
+}

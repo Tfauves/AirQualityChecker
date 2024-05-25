@@ -1,9 +1,10 @@
 import React from "react";
+import { latoNormal, poppinsMed, lilitaOneRegular } from "../fonts/font";
 
 const AirDataCard = ({ apiData }) => {
   if (!apiData) {
     return (
-      <div className=" flex flex-col rounded-md shadow-lg p-3 m-2">
+      <div className=" flex flex-col rounded-md p-3 m-2">
         <div className=" flex justify-center">
           <h2>Get air quality data where you live.</h2>
         </div>
@@ -51,18 +52,20 @@ const AirDataCard = ({ apiData }) => {
   }
 
   return (
-    <div
-      className={`flex flex-col ${cardClass} hover: rounded-md shadow-lg p-3 m-2 `}
-    >
-      <div className="flex mb-3">
-        <h1>Your Reporting Area</h1>
-      </div>
+    <div className=" card">
       <div>
+        <h1 className={latoNormal.className}>Your Reporting Area</h1>
+      </div>
+      <div
+        className={`flex flex-col ${cardClass} hover: rounded-md shadow-lg p-3 m-2 bg-opacity-90 `}
+      >
         {apiData.ReportingArea} {apiData.StateCode}
         <div>
           <h3>{apiData.Category.Name}</h3>
-          AQI:{apiData.AQI}
-          {actionMessage}
+          <h5>
+            AQI:{apiData.AQI}
+            {actionMessage}
+          </h5>
         </div>
       </div>
     </div>
