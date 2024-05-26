@@ -53,11 +53,11 @@ const AirDataForm = () => {
             type="submit"
             value="search zip"
           >
-            Search{" "}
+            Search By ZIP Code
           </button>
         </form>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-10">
         <AirDataCard apiData={data} />
       </div>
     </div>
