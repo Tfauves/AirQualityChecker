@@ -1,11 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { AIRNOW_API_KEY } from "../config";
+import { ZIPCODE_API_KEY } from "../config";
 import AirDataCard from "./AirDataCard";
 
 const AirDataForm = () => {
   const [formData, setFormData] = useState({ zip: "" });
   const [data, setData] = useState(null);
+  const [zipData, setZipData] = useState("");
   const apiKEY = AIRNOW_API_KEY;
 
   const handleChange = (e) => {
@@ -19,6 +21,7 @@ const AirDataForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await fetchData(formData.zip);
+    await fetchZipArea(formData.zip);
     setFormData({ zip: "" });
   };
 
@@ -30,6 +33,14 @@ const AirDataForm = () => {
     const result = await response.json();
     setData(result[0]);
     console.log(result);
+  };
+
+  const fetchZipArea = async (zip) => {
+    const res = await fetch(
+      `https://api.zipcodestack.com/v1/search?codes=${zip}&country=us&apikey=${ZIPCODE_API_KEY}`
+    );
+    setZipData(res);
+    console.log(zipData);
   };
 
   return (
