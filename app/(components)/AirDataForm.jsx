@@ -9,6 +9,7 @@ const AirDataForm = () => {
   const [data, setData] = useState(null);
   const [zipData, setZipData] = useState("");
   const apiKEY = AIRNOW_API_KEY;
+  const zipApiKey = ZIPCODE_API_KEY;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,11 +37,12 @@ const AirDataForm = () => {
   };
 
   const fetchZipArea = async (zip) => {
-    const res = await fetch(
-      `https://api.zipcodestack.com/v1/search?codes=${zip}&country=us&apikey=${ZIPCODE_API_KEY}`
+    const response = await fetch(
+      `https://api.zipcodestack.com/v1/search?codes=${zip}&country=us&apikey=${zipApiKey}`
     );
-    setZipData(res);
-    console.log(zipData);
+    const result = await response.json();
+    setZipData(result);
+    console.log(result);
   };
 
   return (
