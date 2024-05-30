@@ -71,7 +71,7 @@ const AirDataForm = () => {
         </form>
       </div>
       <div className="flex justify-center mt-10">
-        <AirDataCard apiData={data} />
+        <AirDataCard apiData={data} zipData={zipData} />
       </div>
     </div>
   );

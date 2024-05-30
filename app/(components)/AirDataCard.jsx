@@ -1,7 +1,7 @@
 import React from "react";
 import { latoNormal, poppinsMed } from "../fonts/font";
 
-const AirDataCard = ({ apiData }) => {
+const AirDataCard = ({ apiData, zipData }) => {
   if (!apiData) {
     return (
       <div className="flex flex-col rounded-md p-3 m-2">
@@ -15,6 +15,9 @@ const AirDataCard = ({ apiData }) => {
   }
 
   const { Category, ReportingArea, StateCode, AQI } = apiData;
+  const cityData = zipData;
+  console.log("this city" + zipData.results);
+
   let AQIAlertColor = "";
   let actionMessage = "";
 
