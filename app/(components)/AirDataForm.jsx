@@ -62,7 +62,7 @@ const AirDataForm = () => {
             value={formData.zip}
           />
           <button
-            className="btn max-w-screen-sm"
+            className="btn max-w-screen-sm text-white"
             type="submit"
             value="search zip"
           >

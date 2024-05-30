@@ -3,7 +3,7 @@ import { Lato, Poppins } from "next/font/google";
 export const latoNormal = Lato({
   subsets: ["latin"],
   display: "swap",
-  weight: "400",
+  weight: "700",
 });
 
 export const poppinsMed = Poppins({

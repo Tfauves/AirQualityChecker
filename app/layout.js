@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Nav from "./(components)/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
         {children}
+        <div className="flex flex-col h-screen max-h-screen">
+          <Nav />
+        </div>
       </body>
     </html>
   );
