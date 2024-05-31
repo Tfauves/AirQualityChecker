@@ -16,7 +16,6 @@ const AirDataCard = ({ apiData, zipData }) => {
 
   const { Category, ReportingArea, StateCode, AQI } = apiData;
   const cityData = zipData;
-  console.log("this city" + zipData.results);
 
   let AQIAlertColor = "";
   let actionMessage = "";
@@ -60,7 +59,18 @@ const AirDataCard = ({ apiData, zipData }) => {
 
   return (
     <div className="card p-3">
-      <h1 className={`${latoNormal.className} text-2xl mb-3`}>
+      <img
+        alt="Card Image"
+        className="rounded-t-lg object-cover w-full h-48"
+        height={300}
+        src="/bgimg.jpg"
+        style={{
+          aspectRatio: "500/300",
+          objectFit: "cover",
+        }}
+        width={500}
+      />
+      <h1 className={`${latoNormal.className} text-2xl mb-3 mt-3`}>
         Your Reporting Area
       </h1>
       <div
@@ -68,7 +78,7 @@ const AirDataCard = ({ apiData, zipData }) => {
       >
         <div className="flex justify-between items-center">
           <span className={`${poppinsMed.className} text-lg`}>
-            {ReportingArea}, {StateCode}
+            {cityData}, {StateCode}
           </span>
           <div
             className={`flex flex-col items-center justify-center rounded-md p-2 border border-slate-600 ${AQIAlertColor}`}

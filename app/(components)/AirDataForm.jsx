@@ -41,8 +41,8 @@ const AirDataForm = () => {
       `https://api.zipcodestack.com/v1/search?codes=${zip}&country=us&apikey=${zipApiKey}`
     );
     const result = await response.json();
-    setZipData(result);
-    console.log(result);
+    setZipData(result.results[`${zip}`][0].city);
+    console.log(zipData);
   };
 
   return (
