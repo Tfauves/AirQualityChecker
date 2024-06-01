@@ -32,6 +32,9 @@ const AirDataForm = () => {
       `https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=${zip}&date=${currentDate}&API_KEY=${apiKEY}`
     );
     const result = await response.json();
+    // if (JSON.stringify(result) === "[]") {
+    //   console.log("empty");
+    // }
     setData(result[0]);
     console.log(result);
   };
@@ -42,7 +45,7 @@ const AirDataForm = () => {
     );
     const result = await response.json();
     setZipData(result.results[`${zip}`][0].city);
-    console.log(zipData);
+    console.log(result.results[`${zip}`][0].city);
   };
 
   return (
