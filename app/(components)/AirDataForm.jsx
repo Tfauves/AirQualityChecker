@@ -29,7 +29,7 @@ const AirDataForm = () => {
   const fetchData = async (zip) => {
     const currentDate = new Date().toISOString().slice(0, 10);
     const response = await fetch(
-      `https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=${zip}&date=${currentDate}&API_KEY=${apiKEY}`
+      `https://www.airnowapi.org/aq/forecast/zipCode/?format=application/json&zipCode=${zip}&date=${currentDate}&distance=25&API_KEY=${apiKEY}`
     );
     const result = await response.json();
     // if (JSON.stringify(result) === "[]") {
@@ -44,8 +44,8 @@ const AirDataForm = () => {
       `https://api.zipcodestack.com/v1/search?codes=${zip}&country=us&apikey=${zipApiKey}`
     );
     const result = await response.json();
-    setZipData(result.results[`${zip}`][0].city);
-    console.log(result.results[`${zip}`][0].city);
+    setZipData(result.results[`${zip}`][0]);
+    console.log(result.results[`${zip}`][0]);
   };
 
   return (

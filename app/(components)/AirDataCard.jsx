@@ -15,7 +15,7 @@ const AirDataCard = ({ apiData, zipData }) => {
   }
 
   const { Category, ReportingArea, StateCode, AQI } = apiData;
-  const cityData = zipData;
+  const { city, state } = zipData;
 
   let AQIAlertColor = "";
   let actionMessage = "";
@@ -78,7 +78,7 @@ const AirDataCard = ({ apiData, zipData }) => {
       >
         <div className="flex justify-between items-center">
           <span className={`${poppinsMed.className} text-lg`}>
-            {cityData}, {StateCode}
+            {city}, {state}
           </span>
           <div
             className={`flex flex-col items-center justify-center rounded-md p-2 border border-slate-600 ${AQIAlertColor}`}

@@ -13,10 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
-        <div className="flex flex-col h-screen max-h-screen">
-          <Nav />
-          {children}
-        </div>
+        <div className="flex flex-col h-screen max-h-screen">{children}</div>
       </body>
     </html>
   );
