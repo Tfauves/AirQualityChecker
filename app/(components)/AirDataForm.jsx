@@ -22,7 +22,6 @@ const AirDataForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await fetchData(formData.zip);
-    await fetchZipArea(formData.zip);
     setFormData({ zip: "" });
   };
 
@@ -37,6 +36,8 @@ const AirDataForm = () => {
     // }
     setData(result[0]);
     console.log(result);
+
+    fetchZipArea(zip);
   };
 
   const fetchZipArea = async (zip) => {
