@@ -50,7 +50,6 @@ const AirDataForm = () => {
 
       const airQualityResult = await airQualityResponse.json();
       const zipAreaResult = await zipAreaResponse.json();
-
       if (airQualityResult.length > 0) {
         setData(airQualityResult[0]);
       } else {
